@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="item in letters" >{{item}}</li>
+  </ul>
+<!---->
+  <button @click="btnClick">按钮</button>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      letters: ['a', 'b', 'c', 'd']
+    },
+    methods: {
+      btnClick() {
+          //1.push方法:数组的最后增加元素
+        // this.letters.push('aaa');
+        //2.通过索引值修改数组中的元素//非响应式
+        // this.letters[0] = 'bbb';
+
+        //3.pop(删除最后一个元素）
+        // this.letters.pop();
+
+        //4.shift()(删除第一个元素
+        // this.letters.shift();
+
+        //5.unshift():在数组的最前面添加元素
+        // this.letters.unshift('aaa', 'ccc')
+
+        //6.splice作用：删除元素，插入元素，替换元素
+        // this.letters.splice(2, 1);//删除元素：从下标为2处开始，删除1个元素
+        // this.letters.splice(1, 3, 'm', 'n', 'l');//替换元素：下标1到3
+        // this.letters.splice(1, 0, 'e', 'f', 'g');//插入元素
+
+        //7.sort():排序
+        // this.letters.sort();
+
+        //8.reverse():反转
+        this.letters.reverse();
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

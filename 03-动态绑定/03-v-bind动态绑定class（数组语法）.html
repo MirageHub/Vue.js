@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <h2 :class="[active, line]">{{message}}</h2>
+  <h2 :class=getClass()>{{message}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      message:'HelloVue',
+      active: 'aaaa',
+      line: 'bbbb'
+    },
+    methods: {
+      getClass: function () {
+        return [this.active, this.line]
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

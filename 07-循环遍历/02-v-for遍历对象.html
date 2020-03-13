@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  1.遍历对象过程中，如果只是获取一个值，那么获取的是value-->
+  <ul>
+    <li v-for="info in info">{{info}}</li>
+  </ul>
+
+  <!--  2.获取key和value-->
+  <ul>
+    <li v-for="(value, key) in info">{{value}}-{{key}}</li>
+  </ul>
+
+  <!--  3.获取key和value和index-->
+  <ul>
+    <li v-for="(value, key, index) in info">{{value}}-{{key}}-{{index+1}}</li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      info: {
+        name: '压缩',
+        age: 18
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

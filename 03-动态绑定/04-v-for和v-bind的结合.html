@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<style>
+  .active{
+    color: red;
+  }
+</style>
+
+<body>
+<!--作业需求：点击列表中的哪一项，那么该项的文字变成红色-->
+<div id="app">
+  <ul>
+    <li :class="{'active':cuerys==index}" v-for="(m, index) in movies" v-on:click=changecolor(index)>{{index+1}}-{{m}}</li>
+
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      cuerys: 0,
+      movies: ['海王', '叶问', '火影忍者', '进击的巨人']
+    },
+    methods: {
+      changecolor: function (index) {
+        this.cuerys = index;
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

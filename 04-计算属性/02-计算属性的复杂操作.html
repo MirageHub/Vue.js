@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--输出书的总价-->
+<div id="app">
+  <h2>总价格：{{totalPrice}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      books: [
+        {id: 1, name: 'Vue入门', price:50},
+        {id: 2, name: 'golang入门', price:20},
+        {id: 3, name: 'python入门', price:60},
+        {id: 4, name: 'java入门', price:110},
+      ]
+    },
+    computed: {//计算属性
+      totalPrice: function () {
+        let result = 0
+        for(let i=0; i<this.books.length; i++){
+          result += this.books[i].price
+        }
+        return result
+      }
+    }
+
+  })
+</script>
+
+</body>
+</html>

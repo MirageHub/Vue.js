@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+<!--  1.在遍历过程中没有使用索引值（下标值）-->
+  <ul>
+    <li v-for="names in names">{{names}}</li>
+  </ul>
+  <br>
+<!--2.在遍历过程中，使用索引值-->
+  <ul>
+    <li v-for="(names,index) in names">{{index+1}}-{{names}}</li>
+  </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      names: ['亚索', '快乐', '风男']
+    }
+  })
+</script>
+
+</body>
+</html>

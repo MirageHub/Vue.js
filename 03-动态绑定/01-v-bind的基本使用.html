@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <img v-bind:src="imageURL" alt=""><!--动态绑定-->
+  <a v-bind:href="aHref">百度一下</a>
+  <!-- v-bind语法糖写法-->
+  <img :src="imageURL" alt="">
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      message:'HelloVue',
+      imageURL: 'https://img11.360buyimg.com/mobilecms/s280x280_jfs/t1/108641/4/6681/83690/5e5148aeEaaf424ad/28c1252dcb9539c4.jpg.webp',
+      aHref: 'http://www.baidu.com'
+    }
+  })
+</script>
+
+</body>
+</html>
