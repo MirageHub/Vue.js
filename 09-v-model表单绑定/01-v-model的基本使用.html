@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <input type="text" v-model="message"><!--两个地方无论哪里改，另一个地方也会改-->
+  {{message}}
+</div>
+
+<script src="../js/vue.js"></script>
+
+<script>
+  const app=new Vue({
+    el:'#app',//用于挂在要管理的元素
+    data:{//定义数据
+      message:'HelloVue'
+    }
+  })
+</script>
+
+</body>
+</html>
